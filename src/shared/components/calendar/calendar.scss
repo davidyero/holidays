@@ -1,0 +1,126 @@
+$border-color: #CFD2CE;
+$total-height-and-width: 400px;
+$header-height: 100px;
+$number-height: 200px;
+$day-height: 100px;
+$background-color: #F99E1E;
+$background-body: white;
+
+$breakpoint: 470px;
+
+$number-height-mobile: 150px;
+$day-height-mobile: 80px;
+$total-height-mobile: 330px;
+
+.calendar {
+  border: 1px solid $border-color;
+  border-radius: 20px;
+  position: relative;
+  height: $total-height-and-width;
+  text-align: center;
+  width: $total-height-and-width;
+
+  &__header {
+    background: $background-color;
+    border-bottom: 1px solid $border-color;
+    border-radius: 20px 20px 0 0;
+    display: grid;
+    font-weight: bold;
+    font-size: 55px;
+    grid-template-rows: 95px 5px;
+    height: $header-height;
+
+    label {
+      color: $background-body;
+      place-self: center;
+      margin: 0 auto;
+    }
+  }
+
+  &__body {
+    &--number {
+      background: $background-body;
+      display: flex;
+      height: $number-height;
+
+      label {
+        color: #1E1E1E;
+        font-size: 180px;
+        font-weight: bold;
+        margin: 0 auto;
+        place-self: center;
+      }
+    }
+
+    &--day {
+      background: $background-body;
+      border-bottom: 1px solid $border-color;
+      border-radius: 0 0 20px 20px;
+      display: grid;
+      grid-template-rows: 85px 5px 5px 5px;
+      height: $day-height;
+
+      label {
+        color: $background-color;
+        font-size: 50px;
+        font-weight: bold;
+        margin: 0 auto;
+        place-self: center;
+      }
+    }
+  }
+
+  &__first-footer {
+    position: absolute;
+    border-bottom: 1px solid $border-color;
+    border-radius: 20px;
+    height: $total-height-and-width;
+    text-align: center;
+    top: -5px;
+    width: $total-height-and-width;
+  }
+
+  &__second-footer {
+    position: absolute;
+    border-bottom: 1px solid $border-color;
+    border-radius: 20px;
+    height: $total-height-and-width;
+    text-align: center;
+    top: -10px;
+    width: $total-height-and-width;
+  }
+
+  &__line {
+    background-image: linear-gradient(to right, #ce8a2b 33%, rgba(255,255,255,0) 0%);
+    background-position: bottom;
+    background-size: 30px 5px;
+    background-repeat: repeat-x;
+    justify-self: center;
+    width: 85%;
+  }
+
+  @media (max-width: $breakpoint) {
+    height: $total-height-mobile;
+    width: 100%;
+
+    &__header {
+
+    }
+    &__body {
+      &--number {
+        height: $number-height-mobile;
+      }
+      &--day {
+        height: $day-height-mobile;
+
+        label {
+          place-self: auto;
+        }
+      }
+    }
+    &__first-footer, &__second-footer  {
+      height: $total-height-mobile;
+      width: 100%;
+    }
+  }
+}

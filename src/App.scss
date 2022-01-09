@@ -1,38 +1,58 @@
-.App {
-  text-align: center;
+$breakpoint: 470px;
+
+* {
+  font-family: 'Roboto', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #eee;
+    background: #1E1E1E;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+.holidays {
+  height: 100vh;
+  width: 100%;
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  &__container {
+    height: 100%;
+    width: 100%;
+    &--title {
+      font-size: 50px;
+      font-weight: bold;
+      padding: 80px 0;
+      text-align: center;
+    }
+    &--image {
+      display: grid;
+      justify-items: center;
+    }
+    &--emoji {
+      font-size: 180px;
+      text-align: center;
+    }
+    &--message {
+      font-size: 50px;
+      font-weight: bold;
+      text-align: center;
+      padding: 80px 20px 10px;
+    }
   }
-  to {
-    transform: rotate(360deg);
+
+  @media (max-width: $breakpoint) {
+    &__container {
+      &--title {
+        font-size: 35px;
+        padding: 20px;
+      }
+      &--image {
+        padding: 20px;
+      }
+      &--message {
+        font-size: 35px;
+        padding: 0;
+      }
+    }
   }
 }
