@@ -1,0 +1,16 @@
+$footer-height: 64px;
+
+.footer {
+  background-color: white;
+  bottom: 0;
+  display: block;
+  height: $footer-height;
+  text-align: center;
+  width: 100%;
+
+  img {
+    cursor: pointer;
+    height: $footer-height;
+    width: $footer-height;
+  }
+}

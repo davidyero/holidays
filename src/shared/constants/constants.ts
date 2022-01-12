@@ -2,8 +2,8 @@ export const Constants = {
     LABELS: {
         SAD_TITLE: 'Hoy no es festivo',
         GOOD_TITLE: 'Hoy es festivo!!',
-        MESSAGE: 'Falta ## días para el próximo festivo',
-        MESSAGE_ONE_DAY: 'Faltal solo un día para el próximo festivo'
+        MESSAGE: 'Faltan ## días para el próximo festivo',
+        MESSAGE_ONE_DAY: 'Falta solo un día para el próximo festivo'
     },
     EMOJIS: {
         GOD_EMOJIS: ['🤩', '😎', '🥳', '😈', '😁', '😉', '😏', '🥰', '😋', '😚'],
@@ -37,5 +37,7 @@ export const Constants = {
         '11/14/2022',
         // December
         '12/08/2022',
-    ]
+    ],
+    DAYS: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
+    MONTHS:['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
 }

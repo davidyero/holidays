@@ -4,10 +4,13 @@ import {Constants} from "./shared/constants/constants";
 import {Calendar} from "./shared/components/calendar/calendar";
 
 function App() {
-  const {LABELS, EMOJIS, HOLIDAY_LIST} = Constants;
+  const {LABELS, EMOJIS, HOLIDAY_LIST, DAYS, MONTHS} = Constants;
   const [emoji, setEmoji] = useState('');
   const [isHoliday, setIsHoliday] = useState(false);
   const [messageToShow, setMessageToShow] = useState('');
+  const [day, setDay] = useState('');
+  const [numberDay, setNumberDay] = useState(0);
+  const [month, setMonth] = useState('');
 
   useEffect(() => {initialValidation()}, []);
 
@@ -19,19 +22,18 @@ function App() {
     const year = today.getFullYear();
     const stringDate = `${month}/${day}/${year}`;
     const isHoliday = HOLIDAY_LIST.includes(stringDate);
-    if (isHoliday) {
-      setMessageToShow('')
-    } else {
-      calculateNextHoliday();
-    }
+    isHoliday ? setMessageToShow('') : calculateNextHoliday();
     setIsHoliday(isHoliday);
+    setNumberDay(Number(day));
+    setDay(DAYS[today.getDay()])
+    setMonth(MONTHS[today.getMonth()])
     updateEmoji(isHoliday);
   }
 
   const calculateNextHoliday = () => {
     const nextHolidayString = HOLIDAY_LIST.find(date => (new Date(date) > new Date())) as string;
-    const today = new Date();
-    const nextHoliday = new Date(nextHolidayString);
+    const today = (new Date()).setHours(0);
+    const nextHoliday = (new Date(nextHolidayString)).setHours(0);
     // @ts-ignore
     const remainingDays = Math.round(Math.abs((nextHoliday - today) / 86400000));
     modifyMessage(remainingDays);
@@ -57,7 +59,7 @@ function App() {
           <label>{isHoliday ? LABELS.GOOD_TITLE : LABELS.SAD_TITLE}</label>
         </div>
         <div className="holidays__container--image">
-          <Calendar day={'Sabado'} month={'Agosto'} numberDay={23}/>
+          <Calendar day={day} month={month} numberDay={numberDay}/>
         </div>
         <div className="holidays__container--message">
           {messageToShow}

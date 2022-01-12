@@ -1,18 +1,27 @@
-$breakpoint: 470px;
+$breakpoint: 480px;
+$white-color: #eee;
+$black-background-color: #1E1E1E;
 
 * {
   font-family: 'Roboto', sans-serif;
 }
 
+body {
+  margin: 0;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
-    color: #eee;
-    background: #1E1E1E;
+    color: $white-color;
+    background: $black-background-color;
+  }
+  footer {
+    background-color: $white-color;
   }
 }
 
 .holidays {
-  height: 100vh;
+  height: auto;
   width: 100%;
 
   &__container {
@@ -21,7 +30,7 @@ $breakpoint: 470px;
     &--title {
       font-size: 50px;
       font-weight: bold;
-      padding: 80px 0;
+      padding: 40px 0;
       text-align: center;
     }
     &--image {
@@ -36,7 +45,7 @@ $breakpoint: 470px;
       font-size: 50px;
       font-weight: bold;
       text-align: center;
-      padding: 80px 20px 10px;
+      padding: 35px 20px 10px;
     }
   }
 

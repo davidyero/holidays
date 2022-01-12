@@ -6,7 +6,7 @@ $day-height: 100px;
 $background-color: #F99E1E;
 $background-body: white;
 
-$breakpoint: 470px;
+$breakpoint: 480px;
 
 $number-height-mobile: 150px;
 $day-height-mobile: 80px;
@@ -72,6 +72,7 @@ $total-height-mobile: 330px;
 
   &__first-footer {
     position: absolute;
+    border: 0;
     border-bottom: 1px solid $border-color;
     border-radius: 20px;
     height: $total-height-and-width;
@@ -82,6 +83,7 @@ $total-height-mobile: 330px;
 
   &__second-footer {
     position: absolute;
+    border: 0;
     border-bottom: 1px solid $border-color;
     border-radius: 20px;
     height: $total-height-and-width;
