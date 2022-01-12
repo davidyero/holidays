@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/holidays/static/css/main.1066e439.css",
-    "main.js": "/holidays/static/js/main.c86c3269.js",
+    "main.css": "/holidays/static/css/main.55104ed4.css",
+    "main.js": "/holidays/static/js/main.39868f23.js",
     "index.html": "/holidays/index.html",
-    "main.1066e439.css.map": "/holidays/static/css/main.1066e439.css.map",
-    "main.c86c3269.js.map": "/holidays/static/js/main.c86c3269.js.map"
+    "main.55104ed4.css.map": "/holidays/static/css/main.55104ed4.css.map",
+    "main.39868f23.js.map": "/holidays/static/js/main.39868f23.js.map"
   },
   "entrypoints": [
-    "static/css/main.1066e439.css",
-    "static/js/main.c86c3269.js"
+    "static/css/main.55104ed4.css",
+    "static/js/main.39868f23.js"
   ]
 }
